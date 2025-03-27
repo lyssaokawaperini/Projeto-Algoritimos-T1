@@ -1,9 +1,21 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TesteAlgoritimo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] vetorOriginal = {5, 3, 8, 6, 2, 7, 4, 1}; // Teste com vetor de tamanho 8 (Precisa ser alterado posteriomente para dimenção de 1600000)   
+        Random random = new Random();
+
+        System.out.println("Digite o tamanho do vetor: ");
+        int tamanhoVetor = scanner.nextInt();
+
+        int[] vetorOriginal = new int[tamanhoVetor];
+        for (int i = 0; i < tamanhoVetor; i++) {
+            vetorOriginal[i] = random.nextInt(100); 
+        }
+
+        // int[] vetorOriginal = {5, 3, 8, 6, 2, 7, 4, 1}; // Teste com vetor de tamanho 8 (Precisa ser alterado posteriomente para dimenção de 1600000)   
+        
         int[] vetorAtual = vetorOriginal.clone(); // Vetor que será manipulado
         NossoVetor nossoVetor = new NossoVetor(vetorAtual);
         boolean vetorOrdenado = false; 
@@ -27,13 +39,13 @@ public class TesteAlgoritimo {
                     nossoVetor.bubbleSort();
                     long fimBubble = System.nanoTime();
                     vetorOrdenado = true;
-                    System.out.println("Bubble Sort - Tempo de execução (ns): " + (fimBubble - inicioBubble));
-                    System.out.println("Vetor ordenado:");
+                    System.out.println("\nVetor ordenado:");
                     for (int num : nossoVetor.getVetor()) {
                         System.out.print(num + " ");
                     }
-                    System.out.println("\nNúmero de comparações: " + nossoVetor.comparacoes);
+                    System.out.println("\n\nNúmero de comparações: " + nossoVetor.comparacoes);
                     System.out.println("Número de trocas: " + nossoVetor.trocas);
+                    System.out.println("Bubble Sort - Tempo de execução (ns): " + (fimBubble - inicioBubble));
                     System.out.println();
                     break;
 
@@ -44,13 +56,13 @@ public class TesteAlgoritimo {
                     nossoVetor.insertionSort();
                     long fimInsertion = System.nanoTime();
                     vetorOrdenado = true;
-                    System.out.println("Insertion Sort - Tempo de execução (ns): " + (fimInsertion - inicioInsertion));
                     System.out.println("Vetor ordenado:");
                     for (int num : nossoVetor.getVetor()) {
                         System.out.print(num + " ");
                     }
                     System.out.println("\nNúmero de comparações: " + nossoVetor.comparacoes);
                     System.out.println("Número de trocas: " + nossoVetor.trocas);
+                    System.out.println("Insertion Sort - Tempo de execução (ns): " + (fimInsertion - inicioInsertion));
                     System.out.println();
                     break;
 
@@ -61,13 +73,13 @@ public class TesteAlgoritimo {
                     nossoVetor.selectionSort();
                     long fimSelection = System.nanoTime();
                     vetorOrdenado = true;
-                    System.out.println("Selection Sort - Tempo de execução (ns): " + (fimSelection - inicioSelection));
                     System.out.println("Vetor ordenado:");
                     for (int num : nossoVetor.getVetor()) {
                         System.out.print(num + " ");
                     }
                     System.out.println("\nNúmero de comparações: " + nossoVetor.comparacoes);
                     System.out.println("Número de trocas: " + nossoVetor.trocas);
+                    System.out.println("Selection Sort - Tempo de execução (ns): " + (fimSelection - inicioSelection));
                     System.out.println();
                     break;
 
@@ -77,9 +89,9 @@ public class TesteAlgoritimo {
                     long inicioBuscaLinear = System.nanoTime();
                     int resultadoBuscaLinear = nossoVetor.buscaLinear(valorBuscaLinear);
                     long fimBuscaLinear = System.nanoTime();
-                    System.out.println("Busca Linear - Tempo de execução (ns): " + (fimBuscaLinear - inicioBuscaLinear));
                     System.out.println("Resultado da Busca Linear: " + (resultadoBuscaLinear != -1 ? "Encontrado no índice " + resultadoBuscaLinear : "Não encontrado"));
                     System.out.println("Número de comparações: " + nossoVetor.comparacoesBusca);
+                    System.out.println("Busca Linear - Tempo de execução (ns): " + (fimBuscaLinear - inicioBuscaLinear));
                     break;
 
                 case 5: // Busca Binária
@@ -92,13 +104,13 @@ public class TesteAlgoritimo {
                     long inicioBuscaBinaria = System.nanoTime();
                     int resultadoBuscaBinaria = nossoVetor.buscaBinaria(valorBuscaBinaria);
                     long fimBuscaBinaria = System.nanoTime();
-                    System.out.println("Busca Binária - Tempo de execução (ns): " + (fimBuscaBinaria - inicioBuscaBinaria));
                     System.out.println("Resultado da Busca Binária: " + (resultadoBuscaBinaria != -1 ? "Encontrado no índice " + resultadoBuscaBinaria : "Não encontrado"));
                     System.out.println("Número de comparações: " + nossoVetor.comparacoesBusca);
+                    System.out.println("Busca Binária - Tempo de execução (ns): " + (fimBuscaBinaria - inicioBuscaBinaria));
                     break;
 
                 case 6: // Sair
-                    System.out.println("Saindo...");
+                    System.out.println("Encerrando o programa. Até breve...");
                     scanner.close();
                     return;
 
