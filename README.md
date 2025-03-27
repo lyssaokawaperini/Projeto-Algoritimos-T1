@@ -99,4 +99,4 @@ Desenvolver um programa que permita testar e comparar diferentes algoritmos de o
 
 ---
 
-**Trabalho desenvolvido para a disciplina de Algoritmos e Estruturas de Dados.**
+**Trabalho desenvolvido para a disciplina de Algoritmos, Estruturas de Dados e Programação!**
