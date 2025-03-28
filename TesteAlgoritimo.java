@@ -21,11 +21,11 @@ public class TesteAlgoritimo {
 
         while (true) {
             System.out.println("\n--- Menu ---");
-            System.out.println("1. Ordenação (Bubble Sort)");
-            System.out.println("2. Ordenação (Insertion Sort)");
-            System.out.println("3. Ordenação (Selection Sort)");
-            System.out.println("4. Busca (Busca Linear)");
-            System.out.println("5. Busca (Busca Binária)");
+            System.out.println("1. Ordenação: Bubble Sort");
+            System.out.println("2. Ordenação: Insertion Sort");
+            System.out.println("3. Ordenação: Selection Sort");
+            System.out.println("4. Busca: Busca Linear");
+            System.out.println("5. Busca: Busca Binária");
             System.out.println("6. Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
@@ -37,7 +37,7 @@ public class TesteAlgoritimo {
                     // long inicioBubble = System.nanoTime();
                     nossoVetor.bubbleSort();
                     // long fimBubble = System.nanoTime();
-                    vetorOrdenado = true;
+                    //vetorOrdenado = true;
                     // System.out.println("\nVetor ordenado:");
                     // for (int num : nossoVetor.getVetor()) {
                     //     System.out.print(num + " ");
@@ -50,35 +50,37 @@ public class TesteAlgoritimo {
                 case 2: // Insertion Sort
                     vetorAtual = vetorOriginal.clone();
                     nossoVetor = new NossoVetor(vetorAtual);
-                    long inicioInsertion = System.nanoTime();
+                    // long inicioInsertion = System.nanoTime();
                     nossoVetor.insertionSort();
-                    long fimInsertion = System.nanoTime();
-                    vetorOrdenado = true;
-                    System.out.println("Vetor ordenado:");
-                    for (int num : nossoVetor.getVetor()) {
-                        System.out.print(num + " ");
-                    }
-                    System.out.println("\nNúmero de comparações: " + nossoVetor.comparacoes);
-                    System.out.println("Número de trocas: " + nossoVetor.trocas);
-                    System.out.println("Insertion Sort - Tempo de execução (ns): " + (fimInsertion - inicioInsertion));
-                    System.out.println();
+                    // long fimInsertion = System.nanoTime();
+                    //vetorOrdenado = true;
+                    System.out.println("\n\nNúmero de comparações e trocas: " + nossoVetor.comparacoes + nossoVetor.trocas);
+                    // System.out.println("Vetor ordenado:");
+                    // for (int num : nossoVetor.getVetor()) {
+                    //     System.out.print(num + " ");
+                    // }
+                    // System.out.println("\nNúmero de comparações: " + nossoVetor.comparacoes);
+                    // System.out.println("Número de trocas: " + nossoVetor.trocas);
+                    // System.out.println("Insertion Sort - Tempo de execução (ns): " + (fimInsertion - inicioInsertion));
+                    // System.out.println();
                     break;
 
                 case 3: // Selection Sort
                     vetorAtual = vetorOriginal.clone();
                     nossoVetor = new NossoVetor(vetorAtual);
-                    long inicioSelection = System.nanoTime();
+                    //long inicioSelection = System.nanoTime();
                     nossoVetor.selectionSort();
-                    long fimSelection = System.nanoTime();
-                    vetorOrdenado = true;
-                    System.out.println("Vetor ordenado:");
-                    for (int num : nossoVetor.getVetor()) {
-                        System.out.print(num + " ");
-                    }
-                    System.out.println("\nNúmero de comparações: " + nossoVetor.comparacoes);
-                    System.out.println("Número de trocas: " + nossoVetor.trocas);
-                    System.out.println("Selection Sort - Tempo de execução (ns): " + (fimSelection - inicioSelection));
-                    System.out.println();
+                    System.out.println("\n\nNúmero de comparações e trocas: " + nossoVetor.comparacoes + nossoVetor.trocas);
+                    //long fimSelection = System.nanoTime();
+                    // vetorOrdenado = true;
+                    // System.out.println("Vetor ordenado:");
+                    // for (int num : nossoVetor.getVetor()) {
+                    //     System.out.print(num + " ");
+                    // }
+                    // System.out.println("\nNúmero de comparações: " + nossoVetor.comparacoes);
+                    // System.out.println("Número de trocas: " + nossoVetor.trocas);
+                    // System.out.println("Selection Sort - Tempo de execução (ns): " + (fimSelection - inicioSelection));
+                    // System.out.println();
                     break;
 
                 case 4: // Busca Linear
