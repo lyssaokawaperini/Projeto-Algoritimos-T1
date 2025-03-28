@@ -5,30 +5,31 @@ public class NossoVetor {
     public long comparacoes;
     public long trocas;
     public long comparacoesBusca;
+    
 
     public NossoVetor(int tamanho) {
         vetor = new int[tamanho];
         gerarVetorAleatorio();
     }
-
     public NossoVetor(int[] vetor) {
         this.vetor = vetor;
     }
-
     public int[] getVetor() {
         return vetor;
     }
-
     public void setVetor(int[] vetor) {
         this.vetor = vetor;
     }
 
+
+    // Método para gerar vetor aleatório
     private void gerarVetorAleatorio() {
         Random rand = new Random();
         for (int i = 0; i < vetor.length; i++) {
             vetor[i] = rand.nextInt(1600000);
         }
     }
+
 
     // Métodos de ordenação (Bubble Sort)
     //OPERAÇÔES TROCA E COMPARAÇÂO JUNTAR
@@ -51,10 +52,9 @@ public class NossoVetor {
         return (trocas + comparacoes);
     }
     
+
     // Métodos de ordenação (Selection Sort)
-    public void selectionSort() {
-        comparacoes = 0;
-        trocas = 0;
+    public long selectionSort() {
         int n = vetor.length;
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
@@ -71,12 +71,12 @@ public class NossoVetor {
                 trocas++;
             }
         }
+        return (trocas + comparacoes);
     }
 
+
     // Métodos de ordenação (Insertion Sort)
-    public void insertionSort() {
-        comparacoes = 0;
-        trocas = 0;
+    public long insertionSort() {
         int n = vetor.length;
         for (int i = 1; i < n; i++) {
             int key = vetor[i];
@@ -93,8 +93,10 @@ public class NossoVetor {
             }
             vetor[j + 1] = key;
         }
+        return (trocas + comparacoes);
     }
     
+
     // Método de busca linear
     public int buscaLinear(int chave) {
         comparacoesBusca = 0;
@@ -107,6 +109,7 @@ public class NossoVetor {
         }
         return -1;
     }
+
 
     // Método de busca binária (vetor deve estar ordenado)
     public int buscaBinaria(int chave) {
