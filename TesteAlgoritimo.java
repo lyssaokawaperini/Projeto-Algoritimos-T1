@@ -6,9 +6,7 @@ public class TesteAlgoritimo {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        // DEIXAR UM VALOR FIXO
-        System.out.println("Digite o tamanho do vetor: ");
-        int tamanhoVetor = scanner.nextInt();
+        int tamanhoVetor = 100000; // IR AJUSTANDO PARA OS TAMANHOS PEDIDOS
 
         int[] vetorOriginal = new int[tamanhoVetor];
         for (int i = 0; i < tamanhoVetor; i++) {
@@ -36,18 +34,17 @@ public class TesteAlgoritimo {
                 case 1: // Bubble Sort
                     vetorAtual = vetorOriginal.clone();
                     nossoVetor = new NossoVetor(vetorAtual);
-                    long inicioBubble = System.nanoTime();
+                    // long inicioBubble = System.nanoTime();
                     nossoVetor.bubbleSort();
-                    long fimBubble = System.nanoTime();
+                    // long fimBubble = System.nanoTime();
                     vetorOrdenado = true;
                     // System.out.println("\nVetor ordenado:");
                     // for (int num : nossoVetor.getVetor()) {
                     //     System.out.print(num + " ");
                     // }
-                    // System.out.println("\n\nNúmero de comparações: " + nossoVetor.comparacoes);
+                    System.out.println("\n\nNúmero de comparações e trocas: " + nossoVetor.comparacoes + nossoVetor.trocas);
                     // System.out.println("Número de trocas: " + nossoVetor.trocas);
-                    System.out.println("Bubble Sort - Tempo de execução (ns): " + (fimBubble - inicioBubble));
-                    System.out.println();
+                    // System.out.println("Bubble Sort - Tempo de execução (ns): " + (fimBubble - inicioBubble));
                     break;
 
                 case 2: // Insertion Sort
