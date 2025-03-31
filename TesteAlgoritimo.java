@@ -6,16 +6,15 @@ public class TesteAlgoritimo {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int tamanhoVetor = 100000; // IR AJUSTANDO PARA OS TAMANHOS PEDIDOS
+        int tamanhoVetor = 100000; 
 
         int[] vetorOriginal = new int[tamanhoVetor];
         for (int i = 0; i < tamanhoVetor; i++) {
             vetorOriginal[i] = random.nextInt(100); 
-        }
-
-        // int[] vetorOriginal = {5, 3, 8, 6, 2, 7, 4, 1}; // Teste com vetor de tamanho 8 (Precisa ser alterado posteriomente para dimenção de 1600000)   
+        }  
         
         int[] vetorAtual = vetorOriginal.clone(); // Vetor que será manipulado
+        int[] vetorAtual = vetorOriginal.clone();
         NossoVetor nossoVetor = new NossoVetor(vetorAtual);
         boolean vetorOrdenado = false; 
 
