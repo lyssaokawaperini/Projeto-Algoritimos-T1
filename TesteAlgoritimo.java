@@ -13,7 +13,6 @@ public class TesteAlgoritimo {
             vetorOriginal[i] = random.nextInt(100); 
         }  
         
-        int[] vetorAtual = vetorOriginal.clone(); // Vetor que será manipulado
         int[] vetorAtual = vetorOriginal.clone();
         NossoVetor nossoVetor = new NossoVetor(vetorAtual);
         boolean vetorOrdenado = false; 
